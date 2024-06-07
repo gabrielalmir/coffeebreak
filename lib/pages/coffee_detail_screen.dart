@@ -1,6 +1,6 @@
+import 'package:coffeebreak/models/coffee.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/coffee.dart';
 import '../providers/cart_provider.dart';
 
 class CoffeeDetailScreen extends StatelessWidget {
@@ -55,7 +55,7 @@ class CoffeeDetailScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Rp ${coffee.price}',
+                  'R\$ ${coffee.price.toStringAsFixed(2)}',
                   style: const TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -70,7 +70,7 @@ class CoffeeDetailScreen extends StatelessWidget {
                     foregroundColor: Colors.white, backgroundColor: Colors.orange,
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   ),
-                  child: const Text('Add to cart'),
+                  child: const Text('Adicionar'),
                 ),
               ],
             ),

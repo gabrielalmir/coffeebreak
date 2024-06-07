@@ -1,7 +1,8 @@
+import 'package:coffeebreak/models/coffee.dart';
+import 'package:coffeebreak/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
-import '../models/coffee.dart';
+
 import 'package:provider/provider.dart';
-import '../providers/cart_provider.dart';
 
 class CoffeeItem extends StatelessWidget {
   final Coffee coffee;
@@ -18,6 +19,7 @@ class CoffeeItem extends StatelessWidget {
         );
       },
       child: Card(
+        color: Colors.grey[100],
         margin: const EdgeInsets.only(bottom: 10),
         child: ListTile(
           contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 10),

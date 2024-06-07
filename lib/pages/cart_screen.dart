@@ -1,16 +1,20 @@
+
+
+
+import 'package:coffeebreak/providers/cart_provider.dart';
 import 'package:coffeebreak/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/cart_provider.dart';
-
 
 class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Cart'),
+        title: const Text('Seu Carrinho'),
       ),
       body: Column(
         children: <Widget>[
@@ -28,7 +32,7 @@ class CartScreen extends StatelessWidget {
                   const Spacer(),
                   Chip(
                     label: Text(
-                      '\$${cart.totalAmount.toStringAsFixed(2)}',
+                      'R\$ ${cart.totalAmount.toStringAsFixed(2)}',
                       style: TextStyle(
                         color: Theme.of(context).primaryTextTheme.headlineSmall!.color,
                       ),
@@ -36,7 +40,7 @@ class CartScreen extends StatelessWidget {
                     backgroundColor: Theme.of(context).primaryColor,
                   ),
                   TextButton(
-                    child: const Text('ORDER NOW'),
+                    child: const Text('COMPRAR AGORA'),
                     onPressed: () {},
                   ),
                 ],
@@ -47,7 +51,7 @@ class CartScreen extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemCount: cart.items.length,
-              itemBuilder: (ctx, i) => CartItem(
+              itemBuilder: (ctx, i) => CartItemWidget(
                 cart.items.values.toList()[i],
               ),
             ),

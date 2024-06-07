@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import '../models/coffee.dart';
+import '../models/cart_item.dart';
 import '../providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 
-class CartItem extends StatelessWidget {
-  final Coffee coffee;
+class CartItemWidget extends StatelessWidget {
+  final CartItemModel cartItem;
 
-  CartItem(this.coffee);
+  const CartItemWidget(this.cartItem, {super.key});
 
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context, listen: false);
 
     return Dismissible(
-      key: ValueKey(coffee.id),
+      key: ValueKey(cartItem.id),
       background: Container(
         color: Theme.of(context).colorScheme.error,
         alignment: Alignment.centerRight,
@@ -30,7 +30,7 @@ class CartItem extends StatelessWidget {
       ),
       direction: DismissDirection.endToStart,
       onDismissed: (direction) {
-        cart.removeItem(coffee.id);
+        cart.removeItem(cartItem.id);
       },
       child: Card(
         margin: const EdgeInsets.symmetric(
@@ -41,11 +41,11 @@ class CartItem extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundImage: AssetImage(coffee.imageUrl),
+              backgroundImage: NetworkImage(cartItem.imageUrl),
             ),
-            title: Text(coffee.name),
-            subtitle: Text('\$${coffee.price}'),
-            trailing: const Text('1x'),
+            title: Text(cartItem.name),
+            subtitle: Text('R\$ ${cartItem.price.toStringAsFixed(2)}'),
+            trailing: Text('${cartItem.quantity}x'),
           ),
         ),
       ),
