@@ -1,5 +1,6 @@
 import 'package:coffeebreak/models/coffee.dart';
 import 'package:flutter/material.dart';
+
 import '../models/cart_item.dart';
 
 class CartProvider with ChangeNotifier {
@@ -36,6 +37,11 @@ class CartProvider with ChangeNotifier {
 
   void removeItem(String coffeeId) {
     _items.remove(coffeeId);
+    notifyListeners();
+  }
+
+  void clear() {
+    _items.clear();
     notifyListeners();
   }
 

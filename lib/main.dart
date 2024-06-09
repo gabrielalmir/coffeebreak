@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
         ),
         home: HomeScreen(),
         routes: {
-          '/coffee-detail': (ctx) => CoffeeDetailScreen(),
-          '/cart': (ctx) => CartScreen(),
+          '/coffee-detail': (ctx) => const CoffeeDetailScreen(),
+          '/cart': (ctx) => const CartScreen(),
         },
       ),
     );

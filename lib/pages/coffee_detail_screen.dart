@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
 
 class CoffeeDetailScreen extends StatelessWidget {
+  const CoffeeDetailScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final Coffee coffee = ModalRoute.of(context)!.settings.arguments as Coffee;
