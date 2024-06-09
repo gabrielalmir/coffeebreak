@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
         title: const Row(
           children: [
             Icon(Icons.coffee),
-            SizedBox(width: 8), // Espaço entre o ícone e o texto
+            SizedBox(width: 8),
             Text('break'),
           ],
         ),
