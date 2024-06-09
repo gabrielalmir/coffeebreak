@@ -49,7 +49,7 @@ class PaymentScreenState extends State<PaymentScreen> {
             ...cart.items.values.map((cartItem) {
               return ListTile(
                 leading: CircleAvatar(
-                  backgroundImage: NetworkImage(cartItem.imageUrl),
+                  backgroundImage: AssetImage(cartItem.imageUrl),
                 ),
                 title: Text(cartItem.name),
                 subtitle: Text('Quantidade: ${cartItem.quantity}'),
