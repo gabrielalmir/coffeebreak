@@ -1,7 +1,6 @@
 import 'package:coffeebreak/models/coffee.dart';
 import 'package:coffeebreak/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
 class CoffeeItem extends StatelessWidget {
@@ -25,7 +24,7 @@ class CoffeeItem extends StatelessWidget {
           contentPadding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.network(
+            child: Image.asset(
               coffee.imageUrl,
               fit: BoxFit.cover,
               width: 70,

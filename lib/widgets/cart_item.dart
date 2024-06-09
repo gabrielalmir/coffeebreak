@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
 import '../models/cart_item.dart';
 import '../providers/cart_provider.dart';
-import 'package:provider/provider.dart';
 
 class CartItemWidget extends StatelessWidget {
   final CartItemModel cartItem;
@@ -41,7 +42,7 @@ class CartItemWidget extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundImage: NetworkImage(cartItem.imageUrl),
+              backgroundImage: AssetImage(cartItem.imageUrl),
             ),
             title: Text(cartItem.name),
             subtitle: Text('R\$ ${cartItem.price.toStringAsFixed(2)}'),

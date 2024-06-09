@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
       description: 'Espresso com água quente',
       price: 15.000,
       imageUrl:
-      'https://conscienciacafe.com.br/wp-content/uploads/2023/09/cafe-espresso-maquina-1024x683.jpg',
+      'assets/americano.jpg',
     ),
     Coffee(
       id: 'c2',
@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
       description: 'Espresso com espumante',
       price: 25.000,
       imageUrl:
-      'https://bed-api.eraofwe.com/public/prd/file_manager/cl-articles/325_2t1sGU20211108142019209142450',
+      'assets/cappuccino.jpg',
     ),
     Coffee(
       id: 'c3',
@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
       description: 'Espresso com leite',
       price: 25.000,
       imageUrl:
-      'https://lorcoffee.com/cdn/shop/articles/Lor_L_People_2857773_RGB.jpg?v=1684861692',
+      'assets/macchiato.jpg',
     ),
   ];
 
@@ -109,10 +109,9 @@ class HomeScreen extends StatelessWidget {
                       end: Alignment.bottomCenter,
                     ),
                     image: DecorationImage(
-                      image: NetworkImage(
-                        'https://roastercoffees.com/wp-content/uploads/2021/04/What-Is-Macchiato-1024x683.webp', // Substitua pela URL da imagem desejada
-                      ),
+                      image: AssetImage('assets/americano.jpg'),
                       fit: BoxFit.cover,
+                      alignment: Alignment.center
                     ),
                   ),
                 ),

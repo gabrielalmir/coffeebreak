@@ -1,9 +1,12 @@
 import 'package:coffeebreak/models/coffee.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../providers/cart_provider.dart';
 
 class CoffeeDetailScreen extends StatelessWidget {
+  static const routeName = '/coffee-detail';
+
   const CoffeeDetailScreen({super.key});
 
   @override
@@ -29,7 +32,7 @@ class CoffeeDetailScreen extends StatelessWidget {
             Center(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
+                child: Image.asset(
                   coffee.imageUrl,
                   fit: BoxFit.cover,
                   width: double.infinity,
